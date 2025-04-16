@@ -45,7 +45,67 @@ Y Variable (Target): PULMONARY_DISEASE
 Problem Type: Binary Classification
 Number of Observations: 5,000 patients
 Number of Features: 18 (after preprocessing and encoding)
-## Features
+## Features Dataset
+<img width="432" alt="image" src="https://github.com/user-attachments/assets/fd18328c-8f8e-4a4b-88d4-f7f20bb3edf1" />
+
+# Target Variable
+
+The target variable in this project is PULMONARY_DISEASE, a binary classification label that indicates whether or not a patient shows clinical signs of pulmonary disease. It consists of two classes encoded as:
+
+0 – No Pulmonary Disease: The patient exhibits no clinical or lifestyle indicators suggesting the presence of lung disease.
+
+1 – Pulmonary Disease: The patient presents with symptoms or risk factors consistent with respiratory or pulmonary impairment, such as breathing difficulties, low oxygen saturation, or exposure to environmental risk factors.
+
+Pulmonary diseases include a wide range of conditions that impair lung function, such as chronic bronchitis, asthma, and other respiratory disorders. Early prediction of such conditions based on observable patient characteristics can support clinical decisions, promote early intervention, and ultimately improve patient outcomes.
+
+# Feature Distrubution
+![image](https://github.com/user-attachments/assets/ccc4a350-0e0d-4ec3-b6a7-598ea74d4238)
+
+
+![image](https://github.com/user-attachments/assets/c04fa05e-3e54-4785-b16d-ab018cba6607)
+
+
+![image](https://github.com/user-attachments/assets/a0399e23-8257-401f-9275-6488eb9412ab)
+
+
+![image](https://github.com/user-attachments/assets/c24269f2-0d12-4b31-a380-e28038c9dc79)
+
+
+![image](https://github.com/user-attachments/assets/5343d141-bba2-4013-a16a-4c5a84eb098a)
+
+
+# Correlation Analysis
+
+
+![image](https://github.com/user-attachments/assets/9fcd13ba-845a-474a-b9cb-f208accaae95)
+
+The correlation heatmap revealed generally weak linear relationships among most numerical features in the dataset. While some variables such as OXYGEN_SATURATION and ENERGY_LEVEL showed mild positive correlations, the majority of features exhibited minimal interdependence. AGE had a slight negative correlation with ENERGY_LEVEL, and BREATHING_ISSUE showed weak associations with several other clinical symptoms. Importantly, no strong multicollinearity was observed between predictors, indicating that each feature may contribute uniquely to the model. As a result, all features were retained for further modeling to capture both linear and potential nonlinear interactions.
+
+# Feature Engineering
+
+To prepare the dataset for modeling and enhance predictive performance, the following feature engineering steps were applied:
+
+Label Encoding: Binary categorical variables such as GENDER, SMOKING, ALCOHOL_CONSUMPTION, and EXPOSURE_TO_POLLUTION were encoded into numerical format (0 and 1).
+
+Feature Scaling: Continuous variables (AGE, ENERGY_LEVEL, and OXYGEN_SATURATION) were standardized using StandardScaler to normalize their ranges and improve model performance.
+
+Target Encoding: The target variable PULMONARY_DISEASE was label-encoded as a binary class (0 = No, 1 = Yes) for classification tasks.
+
+Correlation Review: A correlation heatmap was used to evaluate multicollinearity. As no strong correlations were observed, all features were retained for modeling.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
