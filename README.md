@@ -93,6 +93,55 @@ Target Encoding: The target variable PULMONARY_DISEASE was label-encoded as a bi
 
 Correlation Review: A correlation heatmap was used to evaluate multicollinearity. As no strong correlations were observed, all features were retained for modeling.
 
+#Principal Component Analysis (PCA)
+
+Principal Component Analysis (PCA) was performed to explore the structure of the dataset and visualize how much variance is captured by each component. PCA was applied specifically to the standardized continuous features: AGE, ENERGY_LEVEL, and OXYGEN_SATURATION. The analysis was not intended for dimensionality reduction in modeling, but rather to gain insight into feature variance and potential class separation. The resulting scree plot (shown below) illustrates the proportion of variance explained by each principal component. The first two components captured the majority of the variance and were used to generate a 2D projection, revealing partial separation between patients with and without pulmonary disease. However, all features were retained in the final models to preserve information, especially from non-linear relationships not captured by PCA alone.
+
+![image](https://github.com/user-attachments/assets/39f7ce2a-d33f-4e26-a63a-6e9236c83ac2)
+![image](https://github.com/user-attachments/assets/2d52f8ff-764e-4749-9154-3f0e994d2b01)
+![image](https://github.com/user-attachments/assets/7cdb589e-1053-4830-80d4-d8c5084e6549)
+
+The PCA results revealed that a substantial portion of the dataset's variance was captured by the first few principal components. Specifically, the top components accounted for the majority of variability across the standardized continuous features (AGE, ENERGY_LEVEL, OXYGEN_SATURATION). While dimensionality reduction was not applied to the final model, PCA helped uncover the underlying structure of the data and provided visual insights into class separation. This exploratory step reinforced the decision to retain all original features for modeling, ensuring that both linear and non-linear patterns contributing to pulmonary disease prediction were preserved.
+
+## Model Fitting
+# Train/Test Split
+
+To ensure robust model evaluation and prevent overfitting, the dataset was split into three subsets: 70% for training, 15% for validation, and 15% for testing. The training set was used to fit the models, while the validation set supported model comparison and hyperparameter tuning. The final test set was held out entirely to assess the model's generalization on unseen data. A stratified splitting strategy was applied to preserve the class distribution of the PULMONARY_DISEASE target variable across all sets, maintaining a balanced representation of both positive and negative cases
+
+# Model Selection
+
+Multiple supervised machine learning algorithms were evaluated to identify the best model for predicting pulmonary disease. The models included 
+. Logistic Regression
+. Support Vector Classifier (SVC)
+. Decision Tree
+. Random Forest
+. XGBoost
+Each model was trained on the same preprocessed dataset and evaluated using consistent performance metrics. 
+
+# Hyperparameter Tuning And
+
+Hyperparameter tuning was performed using GridSearchCV with 5-fold stratified cross-validation to ensure reliable model comparison, prevent overfitting, and identify the optimal parameter configurations for each algorithm. 
+
+# Validation and Metrics
+Performance was assessed based on:
+.Accuracy
+.Precision
+.Recall
+.F1-score
+.ROC-AUC
+# Consolidated Model Metrics
+Model	Accuracy	Precision	Recall	F1-Score	ROC-AUC
+Logistic Regression	0.84	0.81	0.83	0.82	0.89
+SVC	0.85	0.82	0.84	0.83	0.9
+Decision Tree	0.83	0.8	0.82	0.81	0.86
+Random Forest	0.89	0.87	0.89	0.88	0.93
+XGBoost	0.88	0.86	0.87	0.86	0.92
+![image](https://github.com/user-attachments/assets/e833e9c5-cee4-4827-b413-af05fe9c78ce)
+
+
+
+
+
 
 
 
