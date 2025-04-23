@@ -77,9 +77,6 @@ To improve the predictive modeling technique, an iterative approach was used thr
 ![image](https://github.com/user-attachments/assets/ccc4a350-0e0d-4ec3-b6a7-598ea74d4238)
 
 
-![image](https://github.com/user-attachments/assets/c04fa05e-3e54-4785-b16d-ab018cba6607)
-
-
 ![image](https://github.com/user-attachments/assets/a0399e23-8257-401f-9275-6488eb9412ab)
 
 
@@ -129,6 +126,7 @@ To ensure robust model evaluation and prevent overfitting, the dataset was split
 ## Model Selection
 
 Multiple supervised machine learning algorithms were evaluated to identify the best model for predicting pulmonary disease. The models included 
+
 . Logistic Regression
 
 . Support Vector Classifier (SVC)
@@ -160,7 +158,8 @@ Performance was assessed based on:
 
 ## Consolidated Model Metrics
 
-![image](https://github.com/user-attachments/assets/bfa6d23d-89bc-4e6a-b0ed-f9e00d2a1fd3)
+![image](https://github.com/user-attachments/assets/d383e3cd-970b-4685-99e0-81bce636ea0e)
+
 
 . Here are the confusion matrices and ROC curves for the five evaluated models: Logistic Regression, Support Vector Classifier (SVC), Decision Tree, Random Forest, and XGBoost. These visualizations help assess each model’s classification performance, including their ability to distinguish between patients with and without pulmonary disease.
 
