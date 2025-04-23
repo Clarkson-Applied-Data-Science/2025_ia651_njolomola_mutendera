@@ -98,7 +98,9 @@ Correlation Review: A correlation heatmap was used to evaluate multicollinearity
 Principal Component Analysis (PCA) was performed to explore the structure of the dataset and visualize how much variance is captured by each component. PCA was applied specifically to the standardized continuous features: AGE, ENERGY_LEVEL, and OXYGEN_SATURATION. The analysis was not intended for dimensionality reduction in modeling, but rather to gain insight into feature variance and potential class separation. The resulting scree plot (shown below) illustrates the proportion of variance explained by each principal component. The first two components captured the majority of the variance and were used to generate a 2D projection, revealing partial separation between patients with and without pulmonary disease. However, all features were retained in the final models to preserve information, especially from non-linear relationships not captured by PCA alone.
 
 ![image](https://github.com/user-attachments/assets/39f7ce2a-d33f-4e26-a63a-6e9236c83ac2)
+
 ![image](https://github.com/user-attachments/assets/2d52f8ff-764e-4749-9154-3f0e994d2b01)
+
 ![image](https://github.com/user-attachments/assets/7cdb589e-1053-4830-80d4-d8c5084e6549)
 
 The PCA results revealed that a substantial portion of the dataset's variance was captured by the first few principal components. Specifically, the top components accounted for the majority of variability across the standardized continuous features (AGE, ENERGY_LEVEL, OXYGEN_SATURATION). While dimensionality reduction was not applied to the final model, PCA helped uncover the underlying structure of the data and provided visual insights into class separation. This exploratory step reinforced the decision to retain all original features for modeling, ensuring that both linear and non-linear patterns contributing to pulmonary disease prediction were preserved.
@@ -112,10 +114,15 @@ To ensure robust model evaluation and prevent overfitting, the dataset was split
 
 Multiple supervised machine learning algorithms were evaluated to identify the best model for predicting pulmonary disease. The models included 
 . Logistic Regression
+
 . Support Vector Classifier (SVC)
+
 . Decision Tree
+
 . Random Forest
+
 . XGBoost
+
 Each model was trained on the same preprocessed dataset and evaluated using consistent performance metrics. 
 
 # Hyperparameter Tuning And
@@ -124,19 +131,78 @@ Hyperparameter tuning was performed using GridSearchCV with 5-fold stratified cr
 
 # Validation and Metrics
 Performance was assessed based on:
+
 .Accuracy
+
 .Precision
+
 .Recall
+
 .F1-score
+
 .ROC-AUC
+
 # Consolidated Model Metrics
-Model	Accuracy	Precision	Recall	F1-Score	ROC-AUC
-Logistic Regression	0.84	0.81	0.83	0.82	0.89
-SVC	0.85	0.82	0.84	0.83	0.9
-Decision Tree	0.83	0.8	0.82	0.81	0.86
-Random Forest	0.89	0.87	0.89	0.88	0.93
-XGBoost	0.88	0.86	0.87	0.86	0.92
-![image](https://github.com/user-attachments/assets/e833e9c5-cee4-4827-b413-af05fe9c78ce)
+
+	Model	Accuracy	Precision	Recall	F1-Score	ROC-AUC
+0	Logistic Regression	0.8795	0.844	0.853	0.848	0.92
+1	Random Forest	0.895	0.87	0.844	0.857	0.92
+2	SVC	0.877	0.846	0.831	0.838	0.92
+3	XGBoost	0.905	0.869	0.891	0.88	0.92
+4	Decision Tree	0.8409	0.788	0.8022	0.795	0.9
+![image](https://github.com/user-attachments/assets/bfa6d23d-89bc-4e6a-b0ed-f9e00d2a1fd3)
+
+
+
+. Here are the confusion matrices and ROC curves for the five evaluated models: Logistic Regression, Support Vector Classifier (SVC), Decision Tree, Random Forest, and XGBoost. These visualizations help assess each model’s classification performance, including their ability to distinguish between patients with and without pulmonary disease.
+
+![image](https://github.com/user-attachments/assets/55c9053b-51ed-4b24-a26f-81d2b9d2c782)
+
+![image](https://github.com/user-attachments/assets/b1ba10c6-66f0-4bef-b416-93e0f3408e6d)
+
+![image](https://github.com/user-attachments/assets/90347634-632e-4394-9b70-aba8b88bb243)
+
+![image](https://github.com/user-attachments/assets/f44bcd8e-0dcb-43e8-ad05-90ffbf95a402)
+
+![image](https://github.com/user-attachments/assets/ed450da3-f418-47cb-86ef-43e87dce0970)
+
+![image](https://github.com/user-attachments/assets/6b2f74fc-d738-453b-b5ec-ab11aec5708a)
+
+![image](https://github.com/user-attachments/assets/4931f486-c6a0-4e7a-9443-e9de1b42470f)
+
+![image](https://github.com/user-attachments/assets/9d08bcac-522b-460e-a7ac-03173a5602bd)
+
+## Feature Importance
+![image](https://github.com/user-attachments/assets/286ca56f-bff4-4ded-8b92-651db641c865)
+
+![image](https://github.com/user-attachments/assets/c43d2f16-51c5-4346-9a4e-7f64bb6c2698)
+
+# Feature Contribution Table
+Feature	Value	Contribution Weight
+SMOKING	0	0.33
+THROAT_DISCOMFORT	1	0.23
+SMOKING_FAMILY_HISTORY	0	0.16
+STRESS_IMMUNE	0	0.13
+EXPOSURE_TO_POLLUTION	0	0.06
+IMMUNE_WEAKNESS	0	0.04
+ENERGY_LEVEL	-0.04	0.04
+FAMILY_HISTORY	1	0.03
+MENTAL_STRESS	1	0.02
+FINGER_DISCOLORATION	1	0.01
+![image](https://github.com/user-attachments/assets/5090395d-ee33-43f9-b97b-54ec4f2c6b9c)
+
+<img width="758" alt="image" src="https://github.com/user-attachments/assets/b8a7fe7f-f513-4e26-a8bf-15e0a831a69c" />
+
+
+
+
+
+
+
+
+
+
+
 
 
 
