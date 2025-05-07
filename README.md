@@ -93,6 +93,9 @@ To improve the predictive modeling technique, an iterative approach was used thr
 
 The correlation heatmap revealed generally weak linear relationships among most numerical features in the dataset. While some variables such as OXYGEN_SATURATION and ENERGY_LEVEL showed mild positive correlations, the majority of features exhibited minimal interdependence. AGE had a slight negative correlation with ENERGY_LEVEL, and BREATHING_ISSUE showed weak associations with several other clinical symptoms. Importantly, no strong multicollinearity was observed between predictors, indicating that each feature may contribute uniquely to the model. As a result, all features were retained for further modeling to capture both linear and potential nonlinear interactions.
 
+## Train/Test Split
+
+To ensure robust model evaluation and prevent overfitting, the dataset was split into three subsets: 70% for training, 15% for validation, and 15% for testing. The training set was used to fit the models, while the validation set supported model comparison and hyperparameter tuning. The final test set was held out entirely to assess the model's generalization on unseen data. A stratified splitting strategy was applied to preserve the class distribution of the PULMONARY_DISEASE target variable across all sets, maintaining a balanced representation of both positive and negative cases
 ## Feature Engineering
 
 - To prepare the dataset for modeling and enhance predictive performance, the following feature engineering steps were applied:
@@ -109,20 +112,15 @@ The correlation heatmap revealed generally weak linear relationships among most 
 
 Principal Component Analysis (PCA) was performed to explore the structure of the dataset and visualize how much variance is captured by each component. PCA was applied specifically to the standardized continuous features: AGE, ENERGY_LEVEL, and OXYGEN_SATURATION. The analysis was not intended for dimensionality reduction in modeling, but rather to gain insight into feature variance and potential class separation. The resulting scree plot (shown below) illustrates the proportion of variance explained by each principal component. The first two components captured the majority of the variance and were used to generate a 2D projection, revealing partial separation between patients with and without pulmonary disease. However, all features were retained in the final models to preserve information, especially from non-linear relationships not captured by PCA alone.
 
-![image](https://github.com/user-attachments/assets/39f7ce2a-d33f-4e26-a63a-6e9236c83ac2)
+![image](https://github.com/user-attachments/assets/faeb8622-9061-4168-b9ec-c6dff13e86f2)
 
-![image](https://github.com/user-attachments/assets/2d52f8ff-764e-4749-9154-3f0e994d2b01)
+![image](https://github.com/user-attachments/assets/942a44bb-f0b0-4395-9d6d-74fcf69e1761)
 
-![image](https://github.com/user-attachments/assets/7cdb589e-1053-4830-80d4-d8c5084e6549)
+![image](https://github.com/user-attachments/assets/14aa6a83-c323-4632-a2db-3950012e7aee)
 
 The PCA results revealed that a substantial portion of the dataset's variance was captured by the first few principal components. Specifically, the top components accounted for the majority of variability across the standardized continuous features (AGE, ENERGY_LEVEL, OXYGEN_SATURATION). While dimensionality reduction was not applied to the final model, PCA helped uncover the underlying structure of the data and provided visual insights into class separation. This exploratory step reinforced the decision to retain all original features for modeling, ensuring that both linear and non-linear patterns contributing to pulmonary disease prediction were preserved.
 
 # Model Fitting
-
-## Train/Test Split
-
-To ensure robust model evaluation and prevent overfitting, the dataset was split into three subsets: 70% for training, 15% for validation, and 15% for testing. The training set was used to fit the models, while the validation set supported model comparison and hyperparameter tuning. The final test set was held out entirely to assess the model's generalization on unseen data. A stratified splitting strategy was applied to preserve the class distribution of the PULMONARY_DISEASE target variable across all sets, maintaining a balanced representation of both positive and negative cases
-
 ## Model Selection
 
 Multiple supervised machine learning algorithms were evaluated to identify the best model for predicting pulmonary disease. The models included 
@@ -165,30 +163,38 @@ Performance was assessed based on:
 
 ![image](https://github.com/user-attachments/assets/55c9053b-51ed-4b24-a26f-81d2b9d2c782)
 
-![image](https://github.com/user-attachments/assets/b1ba10c6-66f0-4bef-b416-93e0f3408e6d)
+
 
 ![image](https://github.com/user-attachments/assets/90347634-632e-4394-9b70-aba8b88bb243)
 
-![image](https://github.com/user-attachments/assets/f44bcd8e-0dcb-43e8-ad05-90ffbf95a402)
+
 
 ![image](https://github.com/user-attachments/assets/ed450da3-f418-47cb-86ef-43e87dce0970)
 
-![image](https://github.com/user-attachments/assets/6b2f74fc-d738-453b-b5ec-ab11aec5708a)
+
 
 ![image](https://github.com/user-attachments/assets/4931f486-c6a0-4e7a-9443-e9de1b42470f)
 
-![image](https://github.com/user-attachments/assets/9d08bcac-522b-460e-a7ac-03173a5602bd)
+
+![image](https://github.com/user-attachments/assets/6772b758-cd70-4f39-8c3e-04fc3c232546)
+
+
 
 # Feature Importance
-![image](https://github.com/user-attachments/assets/286ca56f-bff4-4ded-8b92-651db641c865)
 
-![image](https://github.com/user-attachments/assets/c43d2f16-51c5-4346-9a4e-7f64bb6c2698)
+![image](https://github.com/user-attachments/assets/c746ed6c-4bc7-49d2-8f1d-972ba1ee2e16)
+
+![image](https://github.com/user-attachments/assets/30c30578-4524-45f6-8f41-fe87a27464bf)
+
 
 ## Feature Contribution Table
 
-![image](https://github.com/user-attachments/assets/5090395d-ee33-43f9-b97b-54ec4f2c6b9c)
 
-<img width="758" alt="image" src="https://github.com/user-attachments/assets/b8a7fe7f-f513-4e26-a8bf-15e0a831a69c" />
+![image](https://github.com/user-attachments/assets/a624e237-7039-4be8-913a-b10ce29daddb)
+
+
+<img width="707" alt="final summary" src="https://github.com/user-attachments/assets/17a96310-ab69-4dc4-84a9-469aebf73808" />
+
 
 # Future Work
 While this study presents promising results in predicting pulmonary disease using machine learning, several avenues exist to enhance and extend its impact:
