@@ -112,7 +112,8 @@ To ensure robust model evaluation and prevent overfitting, the dataset was split
 
 Principal Component Analysis (PCA) was performed to explore the structure of the dataset and visualize how much variance is captured by each component. PCA was applied specifically to the standardized continuous features: AGE, ENERGY_LEVEL, and OXYGEN_SATURATION. The analysis was not intended for dimensionality reduction in modeling, but rather to gain insight into feature variance and potential class separation. The resulting scree plot (shown below) illustrates the proportion of variance explained by each principal component. The first two components captured the majority of the variance and were used to generate a 2D projection, revealing partial separation between patients with and without pulmonary disease. However, all features were retained in the final models to preserve information, especially from non-linear relationships not captured by PCA alone.
 
-![image](https://github.com/user-attachments/assets/faeb8622-9061-4168-b9ec-c6dff13e86f2)
+![image](https://github.com/user-attachments/assets/32ef62fe-85a3-4e99-b732-8c5bcd7e97f8)
+
 
 ![image](https://github.com/user-attachments/assets/942a44bb-f0b0-4395-9d6d-74fcf69e1761)
 
